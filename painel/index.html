@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel de Leads · Dr. Marcelo Marciano</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#2b2b33" />
+  <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" /></noscript>
+
+  <script src="../js/config.js"></script>
+  <link rel="stylesheet" href="painel.css" />
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<section class="login" id="loginView">
+  <div class="login-card">
+    <img src="../assets/logo-dark.webp" alt="Dr. Marcelo Marciano" class="login-logo" width="180" height="49" />
+    <h1 class="login-title">Painel de leads</h1>
+    <p class="login-sub">Acesso da equipe. Entre com seu e-mail e senha.</p>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" autocomplete="username" placeholder="voce@clinica.com" required />
+      </div>
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" autocomplete="current-password" placeholder="Sua senha" required />
+      </div>
+      <p class="login-error" id="loginError" hidden></p>
+      <button type="submit" class="btn btn--primary btn--block" id="loginBtn">Entrar</button>
+    </form>
+
+    <button type="button" class="login-demo" id="demoBtn">Ver demonstração (dados de exemplo)</button>
+    <p class="login-note" id="loginNote"></p>
+  </div>
+</section>
+
+<!-- ===================== APP ===================== -->
+<div class="app" id="appView" hidden>
+  <header class="topbar">
+    <div class="topbar-left">
+      <img src="../assets/logo-dark.webp" alt="Dr. Marcelo Marciano" class="topbar-logo" width="150" height="41" />
+      <span class="topbar-title">Leads</span>
+      <span class="demo-badge" id="demoBadge" hidden>Demonstração</span>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-user" id="userEmail"></span>
+      <button type="button" class="btn btn--ghost btn--sm" id="refreshBtn" title="Atualizar">Atualizar</button>
+      <button type="button" class="btn btn--ghost btn--sm" id="logoutBtn">Sair</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- KPIs -->
+    <div class="kpis" id="kpis">
+      <div class="kpi"><span class="kpi-num" data-kpi="total">0</span><span class="kpi-label">Total</span></div>
+      <div class="kpi kpi--novo"><span class="kpi-num" data-kpi="novo">0</span><span class="kpi-label">Novos</span></div>
+      <div class="kpi kpi--atend"><span class="kpi-num" data-kpi="em_atendimento">0</span><span class="kpi-label">Em atendimento</span></div>
+      <div class="kpi kpi--agendado"><span class="kpi-num" data-kpi="agendado">0</span><span class="kpi-label">Agendados</span></div>
+      <div class="kpi kpi--perdido"><span class="kpi-num" data-kpi="perdido">0</span><span class="kpi-label">Perdidos</span></div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <input type="search" id="fSearch" class="f-input" placeholder="Buscar por nome ou telefone" />
+      <select id="fCaso" class="f-select"><option value="">Todos os casos</option></select>
+      <select id="fOrigem" class="f-select"><option value="">Todas as origens</option></select>
+      <select id="fStatus" class="f-select">
+        <option value="">Todos os status</option>
+        <option value="novo">Novo</option>
+        <option value="em_atendimento">Em atendimento</option>
+        <option value="agendado">Agendado</option>
+        <option value="perdido">Perdido</option>
+      </select>
+      <select id="fData" class="f-select">
+        <option value="0">Qualquer data</option>
+        <option value="1">Hoje</option>
+        <option value="7">Últimos 7 dias</option>
+        <option value="30">Últimos 30 dias</option>
+      </select>
+      <span class="f-count" id="fCount"></span>
+    </div>
+
+    <!-- Lista -->
+    <div class="leads-wrap">
+      <table class="leads" id="leadsTable">
+        <thead>
+          <tr>
+            <th>Nome</th><th>Telefone</th><th>Caso</th><th>Origem</th><th>Data</th><th>Status</th><th></th>
+          </tr>
+        </thead>
+        <tbody id="leadsBody"></tbody>
+      </table>
+      <div class="empty" id="emptyState" hidden>
+        <p>Nenhum lead encontrado com esses filtros.</p>
+      </div>
+      <div class="loading" id="loadingState" hidden><span class="spinner"></span> Carregando leads...</div>
+    </div>
+  </main>
+</div>
+
+<script src="painel.js" defer></script>
+</body>
+</html>
