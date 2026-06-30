@@ -1,0 +1,3 @@
+# LP de trafego pago: nao indexar (reforca o noindex do HTML)
+User-agent: *
+Disallow: /

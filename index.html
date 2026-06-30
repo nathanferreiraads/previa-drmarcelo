@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dr. Marcelo Marciano · Coloproctologista em Votuporanga</title>
+  <meta name="description" content="Tratamento das doenças do intestino e da região anal com tecnologia a laser, técnica minimamente invasiva e protocolo de recuperação. Agende sua consulta em Votuporanga, SP." />
+
+  <!-- Trafego pago: nao indexar para nao competir no organico -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <meta name="theme-color" content="#2b2b33" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
+  <link rel="icon" href="assets/favicon.png" sizes="512x512" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Open Graph (URL absoluta do dominio final) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lp.drmarcelomarciano.com/" />
+  <meta property="og:title" content="Dr. Marcelo Marciano · Coloproctologista" />
+  <meta property="og:description" content="Hemorroida, fissura, fístula e cisto pilonidal tratados com tecnologia a laser. Agende sua consulta em Votuporanga, SP." />
+  <meta property="og:image" content="https://lp.drmarcelomarciano.com/assets/dr-marcelo.webp" />
+
+  <!-- ====== CONFIG (editavel pelo Nathan) ====== -->
+  <script src="js/config.js"></script>
+
+  <!-- ====== dataLayer + GTM (carrega so quando o ID real existir) ====== -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    (function () {
+      var id = (window.LP_CONFIG && LP_CONFIG.GTM_ID) || "";
+      if (id && id.indexOf("XXXX") === -1) {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || []; w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true; j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", id);
+      }
+    })();
+  </script>
+
+  <!-- ====== Pixel Tintim (carrega apos o load, fora do caminho critico) ======
+       Instalado direto aqui porque o GTM ainda nao existe.
+       Quando o container web estiver no ar, pode migrar para o GTM. -->
+  <script>
+    (function () {
+      function loadTintim() {
+        if (window.tt && window.tt.__loaded) return;
+        window.tt = window.tt || {};
+        window.tt.__loaded = true;
+        window.tt.accountCode = (window.LP_CONFIG && LP_CONFIG.TINTIM_ACCOUNT_CODE) || "";
+        var c = document.getElementsByTagName("head")[0];
+        var k = document.createElement("script");
+        k.async = 1; k.src = "//s.tintim.app/static/core/tintim-1.0.js"; c.appendChild(k);
+      }
+      if (document.readyState === "complete") loadTintim();
+      else window.addEventListener("load", loadTintim);
+    })();
+  </script>
+
+  <!-- ====== Fontes (carregamento assincrono, nao bloqueia render) ====== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" /></noscript>
+
+  <!-- ====== Imagem do hero (LCP): preload espelha o <picture> por media ====== -->
+  <link rel="preload" as="image" href="assets/dr-marcelo-sm.webp" media="(max-width:760px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/dr-marcelo.webp" media="(min-width:760.02px)" fetchpriority="high" />
+
+  <!-- ====== Estilos ====== -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+<!-- GTM noscript: descomente trocando GTM-XXXXXXX pelo ID real ao criar o container.
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+-->
+
+<!-- =========================================================
+     HEADER FIXO
+========================================================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#topo" class="brand" aria-label="Dr. Marcelo Marciano, coloproctologista">
+      <img src="assets/logo-dark.webp" alt="Dr. Marcelo Marciano" class="brand-logo brand-logo--dark" width="158" height="43" />
+      <img src="assets/logo-white.webp" alt="Dr. Marcelo Marciano" class="brand-logo brand-logo--light" width="158" height="43" />
+    </a>
+    <button type="button" class="btn btn--primary btn--sm js-open-form" data-cta="header">Agendar consulta</button>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- =========================================================
+       DOBRA 1 · HERO
+  ========================================================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Coloproctologista · Votuporanga e região</p>
+        <h1 class="hero-title">Tratamento das doenças do intestino e da região anal com tecnologia a laser</h1>
+        <p class="hero-sub">Técnica minimamente invasiva e um protocolo de recuperação pensado para o seu conforto. Volte à sua rotina com segurança e discrição.</p>
+        <ul class="hero-check">
+          <li>Hemorroida</li>
+          <li>Fissura anal</li>
+          <li>Fístula anal</li>
+          <li>Cisto pilonidal</li>
+          <li>Câncer intestinal</li>
+        </ul>
+        <div class="hero-actions">
+          <button type="button" class="btn btn--primary btn--lg js-open-form" data-cta="hero">
+            <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+            Agendar minha consulta
+          </button>
+          <a href="#protocolo" class="link-arrow js-smooth">Ver como funciona o tratamento</a>
+        </div>
+        <p class="hero-trust">Dr. Marcelo Marciano · <span data-config="CRM">CRM-SP 107532</span> · <span data-config="RQE">RQE 48846</span> · 16 anos · +11 mil pacientes</p>
+      </div>
+      <div class="hero-media reveal">
+        <div class="hero-photo-wrap">
+          <picture>
+            <source media="(max-width:760px)" srcset="assets/dr-marcelo-sm.webp" />
+            <img src="assets/dr-marcelo.webp" alt="Dr. Marcelo Marciano, coloproctologista" class="hero-photo" width="900" height="1200" fetchpriority="high" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       DOBRA 2 · RECONHECIMENTO DA DOR
+  ========================================================= -->
+  <section class="section section--soft" id="reconhecimento">
+    <div class="container narrow">
+      <h2 class="section-title reveal">Você adiou isso por tempo demais. E não foi por preguiça.</h2>
+      <div class="prose reveal">
+        <p>Sangramento na hora de evacuar. Dor para sentar. Um caroço que apareceu e assustou. A maioria das pessoas convive com isso em silêncio por meses, tentando pomada atrás de pomada, com vergonha de procurar ajuda. O problema é que, quando esses sinais aparecem, eles raramente somem sozinhos. E quanto mais tempo passa, mais a qualidade de vida cai.</p>
+        <p>Procurar um coloproctologista não é exagero. É o caminho mais rápido para parar de conviver com o desconforto e descobrir, com clareza, o que está acontecendo.</p>
+      </div>
+      <div class="callout reveal">
+        <span class="callout-mark" aria-hidden="true"></span>
+        <p>O tratamento mudou. O que antes era temido pela recuperação difícil hoje é feito com laser, de forma minimamente invasiva e com um acompanhamento próximo nos dias mais sensíveis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       DOBRA 3 · O QUE TRATAMOS
+  ========================================================= -->
+  <section class="section" id="tratamentos">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title section-title--center">O que tratamos</h2>
+        <p class="section-intro">Atendimento completo em coloproctologia, do diagnóstico ao tratamento, com tecnologia a laser nos procedimentos da região anal.</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a7 7 0 0 1 14 0c0 5.65-7 10-7 10Z"/><path d="M9.2 12.2 11 14l4-4.2"/></svg>
+          </span>
+          <h3 class="card-title">Hemorroidas</h3>
+          <p class="card-text">Tratamento a laser com protocolo próprio de recuperação. O procedimento mais realizado na clínica.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2-5 4 10 2-5h4"/></svg>
+          </span>
+          <h3 class="card-title">Fissura anal</h3>
+          <p class="card-text">Dor intensa ao evacuar e sangramento. Tratamento que devolve o conforto no dia a dia.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8.4 6H14a4 4 0 0 1 4 4v5.6"/></svg>
+          </span>
+          <h3 class="card-title">Fístula anal</h3>
+          <p class="card-text">Tratamento cirúrgico a laser, com técnica que preserva a função e a recuperação.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.2"/></svg>
+          </span>
+          <h3 class="card-title">Cisto pilonidal</h3>
+          <p class="card-text">Solução a laser para o cisto que incomoda e inflama, com retorno mais rápido à rotina.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-3.6-3.6"/><path d="M11 8.2v5.6M8.2 11h5.6"/></svg>
+          </span>
+          <h3 class="card-title">Câncer intestinal</h3>
+          <p class="card-text">Diagnóstico e tratamento cirúrgico do câncer intestinal, com acompanhamento próximo em cada etapa.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a8 8 0 1 0 8 8"/><path d="M12 8v4l3 2"/></svg>
+          </span>
+          <h3 class="card-title">Plicomas e trombose hemorroidária</h3>
+          <p class="card-text">Procedimentos realizados na própria clínica, com agilidade.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a7 7 0 0 1 14 0c0 5.65-7 10-7 10Z"/><path d="M12 8v5M9.5 10.5h5"/></svg>
+          </span>
+          <h3 class="card-title">Abscesso anal</h3>
+          <p class="card-text">Drenagem do abscesso que causa dor e inchaço, com alívio rápido e cuidado no pós.</p>
+        </article>
+
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a4 4 0 0 0 8 0V3"/><path d="M10 13v3a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="13" r="2"/></svg>
+          </span>
+          <h3 class="card-title">Acompanhamento e orientação</h3>
+          <p class="card-text">Avaliação completa para entender o que você sente e indicar o melhor caminho.</p>
+        </article>
+      </div>
+
+      <div class="section-foot reveal">
+        <p>Não sabe em qual caso você se encaixa? Agende uma consulta. A avaliação existe exatamente para isso.</p>
+        <button type="button" class="btn btn--primary btn--lg js-open-form" data-cta="tratamentos">Quero agendar minha avaliação</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       DOBRA 4 · O DIFERENCIAL (PROTOCOLO): secao escura
+  ========================================================= -->
+  <section class="section section--dark" id="protocolo">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow--center eyebrow--light">Por que aqui é diferente</p>
+        <h2 class="section-title section-title--center section-title--light">Um protocolo pensado para o momento que mais assusta: a recuperação</h2>
+        <p class="section-intro section-intro--light">O maior medo de quem precisa operar não é a cirurgia. É o depois. Foi exatamente para isso que o Dr. Marcelo desenvolveu um protocolo de recuperação que acompanha você de perto nos dias mais delicados:</p>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline-item reveal">
+          <span class="timeline-num">1</span>
+          <div class="timeline-body">
+            <h3 class="timeline-title">Antes do procedimento</h3>
+            <p>Preparo para reduzir a tensão muscular da região e tornar o pós mais tranquilo.</p>
+          </div>
+        </li>
+        <li class="timeline-item reveal">
+          <span class="timeline-num">2</span>
+          <div class="timeline-body">
+            <h3 class="timeline-title">Durante</h3>
+            <p>Tecnologia a laser de última geração, com técnica minimamente invasiva.</p>
+          </div>
+        </li>
+        <li class="timeline-item reveal">
+          <span class="timeline-num">3</span>
+          <div class="timeline-body">
+            <h3 class="timeline-title">Nos primeiros 5 dias</h3>
+            <p>Você retorna à clínica para sessões de laser que ajudam na cicatrização.</p>
+          </div>
+        </li>
+        <li class="timeline-item reveal">
+          <span class="timeline-num">4</span>
+          <div class="timeline-body">
+            <h3 class="timeline-title">Em casa</h3>
+            <p>Você recebe um dispositivo de LED para uso domiciliar, que dá continuidade à recuperação.</p>
+          </div>
+        </li>
+        <li class="timeline-item reveal">
+          <span class="timeline-num">5</span>
+          <div class="timeline-body">
+            <h3 class="timeline-title">Acompanhamento direto</h3>
+            <p>Contato próximo com o médico ao longo de todo o processo. Você não fica sozinho com as dúvidas.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="section-foot reveal">
+        <p class="section-foot-note">Esse cuidado nos dias críticos é o que transforma a experiência de recuperação. É o que faz diferença de verdade.</p>
+        <button type="button" class="btn btn--primary btn--lg js-open-form" data-cta="protocolo">Agendar minha consulta</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       DOBRA 5 · AUTORIDADE
+  ========================================================= -->
+  <section class="section section--soft" id="medico">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow--center">Quem vai cuidar de você</p>
+      </div>
+
+      <div class="doctor-grid">
+        <div class="doctor-media reveal">
+          <div class="doctor-photo-wrap">
+            <picture>
+              <source media="(max-width:760px)" srcset="assets/dr-marcelo-sm.webp" />
+              <img src="assets/dr-marcelo.webp" alt="Dr. Marcelo Marciano, coloproctologista" class="doctor-photo" width="900" height="1200" loading="lazy" />
+            </picture>
+          </div>
+        </div>
+
+        <div class="doctor-info reveal">
+          <h2 class="doctor-name">Dr. Marcelo Marciano</h2>
+          <p class="doctor-role">Coloproctologista · <span data-config="CRM">CRM-SP 107532</span> · <span data-config="RQE">RQE 48846</span></p>
+          <p class="doctor-bio">Há 16 anos cuidando da saúde intestinal e da região anal de pacientes de Votuporanga e de toda a região noroeste paulista.</p>
+
+          <ul class="cred-list">
+            <li>Residência em Coloproctologia, FAMERP (São José do Rio Preto)</li>
+            <li>Residência em Cirurgia Geral, FAMERP</li>
+            <li>Membro Titular da Sociedade Brasileira de Coloproctologia</li>
+            <li>Membro da Sociedade Brasileira de Laser em Medicina e Cirurgia (SBLMC)</li>
+            <li>Sócio Efetivo do GEDIIB (Grupo de Estudos da Doença Inflamatória Intestinal do Brasil)</li>
+            <li>Membro do corpo clínico da Unimed e da Santa Casa de Votuporanga</li>
+          </ul>
+
+          <div class="stats" id="stats">
+            <div class="stat">
+              <span class="stat-num" data-count="16">0</span>
+              <span class="stat-label">anos de experiência</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num stat-num--word">+11 mil</span>
+              <span class="stat-label">pacientes atendidos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       DOBRA 6 · FAQ
+  ========================================================= -->
+  <section class="section" id="faq">
+    <div class="container narrow">
+      <div class="section-head reveal">
+        <h2 class="section-title section-title--center">Antes de você agendar, algumas dúvidas comuns</h2>
+      </div>
+
+      <div class="faq">
+        <details class="faq-item reveal">
+          <summary>Vai doer muito depois?</summary>
+          <div class="faq-body"><p>A recuperação é o ponto que mais recebe atenção aqui. O protocolo com laser, as sessões nos primeiros dias e o acompanhamento próximo existem justamente para tornar o pós-operatório mais tranquilo do que a maioria das pessoas imagina.</p></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Preciso mesmo operar?</summary>
+          <div class="faq-body"><p>Nem todo caso é cirúrgico. Vários tratamentos são feitos na própria clínica. O primeiro passo é sempre a avaliação, para entender o seu caso e indicar o caminho certo.</p></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Atende meu convênio?</summary>
+          <div class="faq-body"><p>O atendimento é particular, com condições especiais para quem tem plano de saúde. Os valores e as formas de pagamento são explicados com clareza na consulta.</p></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Tenho vergonha de ir.</summary>
+          <div class="faq-body"><p>Esse é o sentimento mais comum, e é exatamente por isso que o atendimento é feito com discrição e acolhimento. Você não vai ser julgado. Vai ser cuidado.</p></div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>De onde os pacientes vêm?</summary>
+          <div class="faq-body"><p>De Votuporanga e de toda a região. A clínica fica em local de fácil acesso para quem vem de outras cidades.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       DOBRA 7 · CTA FINAL
+  ========================================================= -->
+  <section class="section section--cta" id="agendar">
+    <div class="container narrow center reveal">
+      <h2 class="cta-title">Dê o primeiro passo para resolver isso de vez</h2>
+      <p class="cta-sub">A consulta é o momento de entender o que você sente, tirar suas dúvidas e descobrir o tratamento certo para o seu caso. Com segurança, tecnologia e o cuidado de quem faz isso há 16 anos.</p>
+      <button type="button" class="btn btn--primary btn--xl js-open-form" data-cta="final">Agendar minha consulta agora</button>
+      <p class="cta-reinforce">Atendimento em Votuporanga, SP · Presencial e online</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================
+     RODAPE
+========================================================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="assets/logo-white.webp" alt="Dr. Marcelo Marciano" width="180" height="49" />
+      <p class="footer-role">Coloproctologista</p>
+      <p class="footer-reg"><span data-config="CRM">CRM-SP 107532</span> · <span data-config="RQE">RQE 48846</span></p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Clínica Vittessence</p>
+      <p>Av. Nasser Marão, 3823, primeiro andar, sala 112<br />São Cosme, Votuporanga, SP, 15504-000</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-label">Contato</p>
+      <p>
+        <a href="#" class="footer-link js-open-form" data-cta="footer">Agendar pelo WhatsApp</a><br />
+        <a href="https://instagram.com/drmarcelomarciano" class="footer-link" target="_blank" rel="noopener">@drmarcelomarciano</a>
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <p class="footer-legal">As informações deste site têm caráter informativo e não substituem a consulta médica. Resultados variam de paciente para paciente. Responsável técnico: Dr. Marcelo Marciano, <span data-config="CRM">CRM-SP 107532</span>.</p>
+    <p class="footer-copy">&copy; <span id="year">2026</span> Dr. Marcelo Marciano. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- =========================================================
+     BOTAO FLUTUANTE (sticky, mobile)
+========================================================= -->
+<button type="button" class="fab js-open-form" data-cta="fab" aria-label="Agendar consulta no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+  <span>Agendar consulta</span>
+</button>
+
+<!-- =========================================================
+     MODAL · FORMULARIO
+========================================================= -->
+<div class="modal" id="formModal" aria-hidden="true">
+  <div class="modal-overlay js-close-form" tabindex="-1"></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+    <button type="button" class="modal-close js-close-form" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+
+    <div class="modal-body" data-state="form">
+      <h2 class="modal-title" id="formTitle">Agende sua consulta</h2>
+      <p class="modal-sub">Preencha e fale agora com nossa equipe no WhatsApp.</p>
+
+      <form id="leadForm" novalidate>
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Seu nome" aria-describedby="err-nome" />
+          <span class="field-error" id="err-nome" data-error="nome" role="alert">Informe seu nome.</span>
+        </div>
+
+        <div class="field">
+          <label for="telefone">WhatsApp / Telefone</label>
+          <input type="tel" id="telefone" name="telefone" inputmode="numeric" autocomplete="tel" required placeholder="(00) 00000-0000" maxlength="16" aria-describedby="err-telefone" />
+          <span class="field-error" id="err-telefone" data-error="telefone" role="alert">Informe um WhatsApp válido.</span>
+        </div>
+
+        <div class="field">
+          <span class="field-label" id="caso-label">Qual o seu caso?</span>
+          <div class="chips" role="radiogroup" aria-labelledby="caso-label">
+            <button type="button" class="chip" data-caso="Hemorroida" role="radio" aria-checked="false">Hemorroida</button>
+            <button type="button" class="chip" data-caso="Fissura" role="radio" aria-checked="false">Fissura</button>
+            <button type="button" class="chip" data-caso="Fístula" role="radio" aria-checked="false">Fístula</button>
+            <button type="button" class="chip" data-caso="Cisto pilonidal" role="radio" aria-checked="false">Cisto pilonidal</button>
+            <button type="button" class="chip" data-caso="Estou com dor" role="radio" aria-checked="false">Estou com dor</button>
+            <button type="button" class="chip" data-caso="Estou com sangramento" role="radio" aria-checked="false">Estou com sangramento</button>
+            <button type="button" class="chip" data-caso="Preciso de orientação" role="radio" aria-checked="false">Preciso de orientação</button>
+          </div>
+          <input type="hidden" id="caso" name="caso" />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary btn--block btn--lg" id="submitBtn">
+            <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+            Enviar e falar no WhatsApp
+          </button>
+          <p class="form-micro">Seus dados estão seguros e são usados apenas para o seu atendimento.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal-body modal-success" data-state="success" hidden>
+      <div class="success-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2 class="modal-title" id="successTitle" tabindex="-1">Tudo certo!</h2>
+      <p class="modal-sub">Estamos abrindo o WhatsApp para você falar com nossa equipe. Se não abrir automaticamente, toque no botão abaixo.</p>
+      <a href="#" class="btn btn--primary btn--block btn--lg" id="successWa" target="_blank" rel="noopener">
+        <svg class="btn-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.6 1 1.3 1.6.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
+        Abrir o WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Link OCULTO do Tintim. Apenas o envio valido do form "clica" nele. -->
+<a id="wa-redirect" href="#" target="_blank" rel="noopener" style="display:none" aria-hidden="true" tabindex="-1">wa</a>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
