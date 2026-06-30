@@ -169,7 +169,12 @@ ul, ol { list-style: none; padding: 0; }
   transition: background .3s var(--ease), box-shadow .3s var(--ease), padding .3s var(--ease);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; }
-.brand-logo { height: 40px; width: auto; transition: opacity .3s; }
+.brand-group { display: flex; align-items: center; gap: 14px; }
+.brand { display: inline-flex; align-items: center; }
+.brand-divider { width: 1px; height: 40px; background: var(--taupe-300); opacity: .7; }
+.brand-vittessence { height: 56px; width: auto; transition: height .3s var(--ease); }
+.site-header.scrolled .brand-vittessence { height: 48px; }
+.brand-logo { height: 50px; width: auto; transition: opacity .3s, height .3s var(--ease); }
 .brand-logo--light { display: none; }
 .site-header.scrolled {
   background: rgba(255,255,255,.92);
@@ -177,7 +182,7 @@ ul, ol { list-style: none; padding: 0; }
   box-shadow: 0 1px 0 var(--line), 0 8px 30px rgba(43,43,51,.07);
   padding: 10px 0;
 }
-.site-header.scrolled .brand-logo { height: 34px; }
+.site-header.scrolled .brand-logo { height: 42px; }
 
 /* ============================================================
    HERO
@@ -192,15 +197,16 @@ ul, ol { list-style: none; padding: 0; }
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap: clamp(32px, 5vw, 72px);
+  grid-template-columns: 1.22fr .88fr;
+  gap: clamp(28px, 4vw, 60px);
   align-items: center;
 }
+.nowrap { white-space: nowrap; }
 .hero-title {
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: clamp(2.05rem, 5vw, 3.5rem);
-  line-height: 1.06;
+  font-size: clamp(2rem, 4.4vw, 3.05rem);
+  line-height: 1.08;
   letter-spacing: -.025em;
   color: var(--ink);
   margin-bottom: 22px;
@@ -279,6 +285,12 @@ ul, ol { list-style: none; padding: 0; }
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(16px, 2vw, 24px);
 }
+.cards-group-title {
+  font-family: var(--font-head); font-weight: 700; font-size: .82rem;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--accent-text);
+  margin: 0 0 18px; padding-left: 2px;
+}
+.cards-grid + .cards-group-title { margin-top: clamp(40px, 5vw, 60px); }
 .card {
   background: #fff;
   border: 1px solid var(--line);
@@ -403,8 +415,12 @@ ul, ol { list-style: none; padding: 0; }
    RODAPE
    ============================================================ */
 .site-footer { background: var(--grafite-900); color: var(--taupe-200); padding: clamp(56px, 7vw, 80px) 0 36px; }
-.footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1); }
-.footer-brand img { height: 46px; width: auto; margin-bottom: 14px; }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1); align-items: start; }
+.footer-logos { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.footer-logos img { width: auto; }
+.footer-logo-dr { height: 46px; }
+.footer-logo-clinic { height: 54px; }
+.footer-divider { width: 1px; height: 42px; background: rgba(255,255,255,.18); }
 .footer-role { font-family: var(--font-head); font-weight: 600; color: #fff; }
 .footer-reg { font-size: .9rem; color: var(--muted-light); margin-top: 4px; }
 .footer-label { font-family: var(--font-head); font-weight: 700; color: #fff; margin-bottom: 12px; letter-spacing: .02em; }
@@ -545,9 +561,13 @@ ul, ol { list-style: none; padding: 0; }
   .hero-sub { margin-inline: auto; }
   .hero-check { justify-content: center; }
   .hero-actions { justify-content: center; }
-  .hero-title { font-size: clamp(1.85rem, 8vw, 2.4rem); }
+  .hero-title { font-size: clamp(1.6rem, 6.8vw, 2.05rem); }
   .hero-media::after { display: none; }
   .header-inner .btn--sm { padding: 9px 16px; font-size: .85rem; }
+  /* no mobile, header mostra so a assinatura do Dr. (Vittessence segue na secao do medico e rodape) */
+  .brand-divider, .brand-vittessence { display: none; }
+  .brand-logo { height: 44px; }
+  .site-header.scrolled .brand-logo { height: 38px; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .fab span { display: none; }
   .fab { padding: 16px; }
