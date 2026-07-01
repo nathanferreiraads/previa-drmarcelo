@@ -14,9 +14,9 @@ window.LP_CONFIG = {
      conta do pixel do Tintim + deste link. */
   TINTIM_LINK: "https://tintim.link/whatsapp/27527554-75a9-4530-a542-b49ad7e2f92b/9aebba49-2802-4839-935c-b551b1c154c2",
   TINTIM_ACCOUNT_CODE: "27527554-75a9-4530-a542-b49ad7e2f92b",
-  /* Anexar a mensagem (com o caso) ao link do Tintim via ?text=.
-     Deixe false ate confirmar que o Tintim respeita esse parametro.
-     O caso sempre e gravado no lead e no dataLayer, independente disto. */
+  /* A mensagem pre-escrita do WhatsApp e configurada no PROPRIO painel do Tintim.
+     Por isso mantenha false: a LP nao precisa anexar ?text=.
+     O caso continua sendo gravado no lead e no dataLayer (dashboard + tracking). */
   TINTIM_APPEND_TEXT: false,
 
   /* ---------- GTM (CRIAR DEPOIS) ----------

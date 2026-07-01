@@ -416,11 +416,7 @@ ul, ol { list-style: none; padding: 0; }
    ============================================================ */
 .site-footer { background: var(--grafite-900); color: var(--taupe-200); padding: clamp(56px, 7vw, 80px) 0 36px; }
 .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1); align-items: start; }
-.footer-logos { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
-.footer-logos img { width: auto; }
-.footer-logo-dr { height: 46px; }
-.footer-logo-clinic { height: 54px; }
-.footer-divider { width: 1px; height: 42px; background: rgba(255,255,255,.18); }
+.footer-clinic-logo { height: 58px; width: auto; margin-bottom: 16px; }
 .footer-role { font-family: var(--font-head); font-weight: 600; color: #fff; }
 .footer-reg { font-size: .9rem; color: var(--muted-light); margin-top: 4px; }
 .footer-label { font-family: var(--font-head); font-weight: 700; color: #fff; margin-bottom: 12px; letter-spacing: .02em; }
@@ -564,10 +560,9 @@ ul, ol { list-style: none; padding: 0; }
   .hero-title { font-size: clamp(1.6rem, 6.8vw, 2.05rem); }
   .hero-media::after { display: none; }
   .header-inner .btn--sm { padding: 9px 16px; font-size: .85rem; }
-  /* no mobile, header mostra so a assinatura do Dr. (Vittessence segue na secao do medico e rodape) */
-  .brand-divider, .brand-vittessence { display: none; }
-  .brand-logo { height: 44px; }
-  .site-header.scrolled .brand-logo { height: 38px; }
+  /* header mobile: logo da Vittessence */
+  .brand-vittessence { height: 46px; }
+  .site-header.scrolled .brand-vittessence { height: 40px; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .fab span { display: none; }
   .fab { padding: 16px; }

@@ -45,9 +45,14 @@
     return ("0" + dt.getDate()).slice(-2) + "/" + ("0" + (dt.getMonth() + 1)).slice(-2) + "/" + dt.getFullYear();
   }
   function origemOf(l) {
-    var s = l.utm_source, c = l.utm_campaign;
-    if (!s && !c) return "Direto";
-    return [s, c].filter(Boolean).join(" · ");
+    var parts = [l.utm_source, l.utm_medium, l.utm_campaign].filter(Boolean);
+    return parts.length ? parts.join(" · ") : "Direto";
+  }
+  function origemTitle(l) {
+    var f = [["source", l.utm_source], ["medium", l.utm_medium], ["campaign", l.utm_campaign],
+             ["content", l.utm_content], ["term", l.utm_term], ["gclid", l.gclid], ["fbclid", l.fbclid]];
+    var s = f.filter(function (x) { return x[1]; }).map(function (x) { return x[0] + ": " + x[1]; });
+    return s.length ? s.join("\n") : "Sem UTMs (acesso direto)";
   }
 
   /* ---------------- Supabase REST ---------------- */
@@ -167,7 +172,7 @@
         '<td data-th="Nome"><span class="lead-nome">' + esc(l.nome) + "</span></td>" +
         '<td data-th="Telefone"><span class="lead-tel">' + esc(fmtPhone(l.telefone)) + "</span></td>" +
         '<td data-th="Caso"><span class="caso-tag">' + esc(l.caso || "-") + "</span></td>" +
-        '<td data-th="Origem"><span class="lead-origem">' + esc(origemOf(l)) + "</span></td>" +
+        '<td data-th="Origem"><span class="lead-origem" title="' + esc(origemTitle(l)) + '">' + esc(origemOf(l)) + "</span></td>" +
         '<td data-th="Data"><span class="lead-data">' + esc(fmtDate(l.created_at)) + "</span></td>" +
         '<td data-th="Status"><select class="status-sel" data-status="' + esc(l.status) + '" data-id="' + esc(l.id) + '">' + statusOpts + "</select></td>" +
         '<td data-th=""><a class="wa-btn" href="https://wa.me/' + waNumber(l.telefone) + '" target="_blank" rel="noopener">' + WA_SVG + "WhatsApp</a></td>";
@@ -191,11 +196,12 @@
       "Marcos Vinícius Lima", "Patrícia Gomes", "Eduardo Tavares", "Camila Ferreira", "Rafael Moreira",
       "Beatriz Nunes", "Luiz Henrique Dias", "Sandra Regina", "Thiago Barbosa"];
     var origens = [
-      { utm_source: "instagram", utm_campaign: "hemorroida-laser" },
-      { utm_source: "google", utm_campaign: "coloproctologista-votuporanga" },
-      { utm_source: "facebook", utm_campaign: "remarketing" },
-      { utm_source: "instagram", utm_campaign: "fissura-dor" },
-      { utm_source: null, utm_campaign: null }
+      { utm_source: "instagram", utm_medium: "bio", utm_campaign: "link-da-bio" },
+      { utm_source: "google", utm_medium: "cpc", utm_campaign: "coloproctologista-votuporanga" },
+      { utm_source: "facebook", utm_medium: "cpc", utm_campaign: "remarketing" },
+      { utm_source: "instagram", utm_medium: "stories", utm_campaign: "fissura-dor" },
+      { utm_source: "instagram", utm_medium: "reels", utm_campaign: "hemorroida-laser" },
+      { utm_source: null, utm_medium: null, utm_campaign: null }
     ];
     var statuses = ["novo", "novo", "novo", "em_atendimento", "agendado", "perdido"];
     var ddd = ["17", "11", "18", "16"];
@@ -208,7 +214,7 @@
         nome: nome,
         telefone: tel,
         caso: casos[i % casos.length],
-        utm_source: o.utm_source, utm_campaign: o.utm_campaign,
+        utm_source: o.utm_source, utm_medium: o.utm_medium, utm_campaign: o.utm_campaign,
         status: statuses[i % statuses.length],
         created_at: new Date(now - i * 7.3 * 36e5).toISOString()
       };
